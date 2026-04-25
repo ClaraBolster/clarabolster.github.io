@@ -1,0 +1,78 @@
+# ======================================================
+# Site-wide configuration
+# Edit this file to update emails, social links, analytics, etc.
+# ======================================================
+
+site_url: "https://clarabolster.com"
+
+# Name
+name:
+  first: "Clara"
+  last: "Bolster-Foucault"
+
+# SEO meta description
+meta_description:
+  en: Clara Bolster-Foucault — epidemiologist, health equity researcher, and community leader. Based in Montréal.
+  fr: Clara Bolster-Foucault — épidémiologiste, chercheuse en équité en santé et directrice communautaire. Basée à Montréal.
+
+# CV — add a French version later by uncommenting the fr: line
+cv:
+  en: "/assets/cv/cv-en.pdf"
+  # fr: "/assets/cv/cv-fr.pdf"
+
+# Google Analytics — leave blank to disable
+google_analytics_id: ""
+
+# Photo
+photo: "/assets/images/clara-headshot.jpg"
+photo_alt:
+  en: "Photo of Clara Bolster-Foucault"
+  fr: "Photo de Clara Bolster-Foucault"
+
+# Open Graph defaults (used when sharing links on social media)
+og_image: "/assets/images/clara-headshot.jpg"
+og_type: "website"
+
+# Footer
+copyright_name: "Clara Bolster-Foucault"
+copyright_location: "Montréal, QC"
+
+# UI strings — navigation and accessibility labels
+wordmark: "cbf."
+
+nav:
+  work:
+    en: "Work"
+    fr: "Travail"
+  cv:
+    en: "CV"
+    fr: "CV"
+
+lang_toggle_label:
+  en: "Toggle language"
+  fr: "Changez de langue"
+
+theme_toggle_label:
+  en: "Theme"
+  fr: "Thème"
+
+# Social links — displayed as icons under the photo
+# For lang-specific URLs use en:/fr: keys; plain strings work for all languages
+social:
+  - name: Email
+    icon: email
+    url:
+      en: "mailto:hello@clarabolster.com"
+      fr: "mailto:salut@clarabolster.com"
+
+  - name: Google Scholar
+    icon: scholar
+    url: "https://scholar.google.ca/citations?hl=en&user=lmOmNDUAAAAJ"
+
+  - name: LinkedIn
+    icon: linkedin
+    url: "https://www.linkedin.com/in/clara-bolster-foucault/"
+
+  - name: GitHub
+    icon: github
+    url: "https://github.com/ClaraBolster"
