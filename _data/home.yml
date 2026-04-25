@@ -1,0 +1,28 @@
+# ======================================================
+# Home page content — roles, bio, "Right now" card, timeline
+# Translatable fields use en:/fr: keys.
+# Non-translated fields (kind, year, url, note_rotation) are plain strings.
+# ======================================================
+
+roles:
+  en: "Epidemiologist · Health Equity Researcher · Non-Profit Executive"
+  fr: "Épidémiologiste · Chercheuse en équité en santé · Directrice d'OBNL"
+
+bio:
+  en: >-
+    I work at the intersection of <em>quantitative evidence and policy action</em>. My doctoral research examines socioeconomic and gender-based
+    inequities in how older adults age in place in Quebec using linked administrative data. Alongside my academic work, I lead a <em>registered charity addressing period poverty</em> across the province.
+    I've testified before the House of Commons, and my research has been featured in <em>The Globe and Mail</em>, <em>La Presse</em>, and <em>Radio-Canada</em>.
+  fr: >-
+    Je travaille à l'intersection de <em>l'analyse quantitative et l'action politique</em>. Mes recherches doctorales portent sur les inégalités socioéconomiques et de genre dans le vieillissement chez soi au Québec, à partir de données administratives jumelées. En parallèle de mon travail universitaire, je dirige un <em>organisme de bienfaisance qui lutte contre la précarité menstruelle</em>, à travers la province. J'ai témoigné devant la Chambre des communes, et mes recherches ont été couverts par <em>La Presse</em>, <em>The Globe and Mail</em>, et <em>Radio-Canada</em>.
+
+now:
+  label:
+    en: "Right now"
+    fr: "En ce moment"
+  items:
+    - en: "Writing up my dissertation, defending in 2026."
+      fr: "En rédaction de thèse, soutenance en 2026."
+    - en: "Reading Invisible Women by Caroline Criado Perez (again)."
+      fr: "Je (re)lis Femmes Invisibles par Caroline Criado Perez."
+
