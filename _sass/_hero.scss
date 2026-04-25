@@ -5,7 +5,7 @@
   grid-template-columns: 240px 1fr;
   gap: 44px;
   align-items: center;
-  padding: 60px 0 48px;
+  padding: 60px 0 24px;
 }
 
 .hero .photo-col {
@@ -25,7 +25,7 @@
 
 .hero .name {
   font-family: "Newsreader", serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(40px, 5.5vw, 60px);
   line-height: 0.95;
   letter-spacing: -0.025em;
@@ -123,19 +123,35 @@
 
 .now-card .now-label {
   display: block;
+  width: fit-content;
   font-family: "JetBrains Mono", monospace;
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 4px;
   margin-bottom: 6px;
 }
 
-.now-card .now-body {
+.now-card .now-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   font-family: "Caveat", cursive;
   font-size: 22px;
   line-height: 1.25;
   color: var(--ink);
+
+  li::before {
+    content: "·";
+    color: var(--accent);
+    margin-right: 6px;
+  }
+
+  li + li {
+    margin-top: 4px;
+  }
 
   i {
     font-style: italic;
