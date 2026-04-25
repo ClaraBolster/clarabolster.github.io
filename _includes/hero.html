@@ -4,10 +4,10 @@
 
 <section class="hero">
   <div class="photo-col">
-    <div class="photo" style="background-image: url('{{ config.photo }}')" aria-label="{{ config.photo_alt[lang] }}"></div>
+    <div class="photo" style="background-image: url('{{ config.photo }}')" aria-label="{{ config.photo_alt[lang] | default: config.photo_alt.en }}"></div>
     <div class="socials">
-      {% for social in site.data.social %}
-      <a href="{% if social.use_lang_email %}mailto:{{ config.email[lang] }}{% else %}{{ social.url }}{% endif %}" aria-label="{{ social.name }}" title="{{ social.name }}">
+      {% for social in config.social %}
+      <a href="{{ social.url[lang] | default: social.url.en | default: social.url }}" aria-label="{{ social.name }}" title="{{ social.name }}" target="_blank" rel="noopener">
         {% include social-icons.html icon=social.icon %}
       </a>
       {% endfor %}
@@ -15,11 +15,11 @@
   </div>
   <div>
     <h1 class="name">{{ site_data.name.first }}<br/>{{ site_data.name.last }}</h1>
-    <div class="roles">{{ site_data.roles[lang] }}</div>
-    <p class="bio">{{ site_data.bio[lang] }}</p>
+    <div class="roles">{{ site_data.roles[lang] | default: site_data.roles.en }}</div>
+    <p class="bio">{{ site_data.bio[lang] | default: site_data.bio.en }}</p>
     <div class="now-card">
-      <span class="now-label">{{ site_data.now.label[lang] }}</span>
-      <span class="now-body">{{ site_data.now.body[lang] }}</span>
+      <span class="now-label">{{ site_data.now.label[lang] | default: site_data.now.label.en }}</span>
+      <span class="now-body">{{ site_data.now.body[lang] | default: site_data.now.body.en }}</span>
     </div>
   </div>
 </section>

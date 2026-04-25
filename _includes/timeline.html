@@ -1,24 +1,20 @@
 {% assign lang = page.lang | default: "en" %}
 {% assign strings = site.data.strings %}
+{% assign config = site.data.config %}
 {% assign timeline = site.data.timeline %}
+{% assign cv_url = config.cv[lang] | default: config.cv.en %}
 
-{% if lang == "en" %}
-  {% assign home_url = "/" %}
-{% else %}
-  {% assign home_url = "/fr/" %}
-{% endif %}
-
-<section class="section" id="timeline">
+<section class="section" id="cv">
   <div class="section-head">
     <div class="lhs">
-      <h2>{{ strings.timeline.section_title[lang] }}</h2>
+      <h2>{{ strings.timeline.section_title[lang] | default: strings.timeline.section_title.en }}</h2>
     </div>
-    <a class="more" href="{{ home_url }}{{ strings.timeline.more_url }}">{{ strings.timeline.more_label[lang] }}</a>
+    <a class="more" href="{{ cv_url }}" target="_blank" rel="noopener">{{ strings.timeline.more_label[lang] | default: strings.timeline.more_label.en }}</a>
   </div>
 
   <div class="filter-bar" id="filters">
     {% for filter in strings.timeline.filters %}
-    <button {% if filter.key == "all" %}class="active"{% endif %} data-filter="{{ filter.key }}">{{ filter.label[lang] }}</button>
+    <button {% if filter.key == "all" %}class="active"{% endif %} data-filter="{{ filter.key }}">{{ filter.label[lang] | default: filter.label.en }}</button>
     {% endfor %}
   </div>
 
@@ -28,13 +24,13 @@
       <span class="year">{{ item.year }}</span>
       <span class="dot"></span>
       <h3 class="tl-title">
-        {% if item.url %}<a href="{{ item.url }}">{{ item.title[lang] | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title }}{% endif %}
+        {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title }}{% endif %}
       </h3>
-      {% assign venue_text = item.venue[lang] | default: item.venue %}
+      {% assign venue_text = item.venue[lang] | default: item.venue.en | default: item.venue %}
       {% if venue_text %}
       <div class="tl-meta"><span class="venue">{{ venue_text }}</span></div>
       {% endif %}
-      {% assign note_text = item.note[lang] | default: item.note %}
+      {% assign note_text = item.note[lang] | default: item.note.en | default: item.note %}
       {% if note_text %}
       <aside class="tl-note" style="transform: rotate({{ item.note_rotation | default: '-1.5deg' }});">{{ note_text }}</aside>
       {% endif %}

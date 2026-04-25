@@ -100,12 +100,11 @@
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent);
-  transition: background 0.15s, color 0.15s, transform 0.15s;
+  transition: background 0.15s, color 0.15s;
 
   &:hover {
     background: var(--accent);
     color: var(--paper);
-    transform: translateY(-1px);
   }
 
   svg {

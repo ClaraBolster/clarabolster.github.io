@@ -19,8 +19,7 @@ Gemfile.lock
 # Design source material
 material_for_claude/
 
-# Superpowers plugin cache
+# Claude
+.claude/
 .superpowers/
-
-# Plan docs
 docs/
