@@ -19,8 +19,8 @@
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background-size: cover;
-  background-position: center 22%;
+  object-fit: cover;
+  object-position: center 22%;
 }
 
 .hero .name {
@@ -157,8 +157,4 @@
     font-style: italic;
     color: var(--note-accent);
   }
-}
-
-body[data-personality="off"] .now-card {
-  display: none;
 }
