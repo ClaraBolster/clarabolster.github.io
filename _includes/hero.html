@@ -1,6 +1,6 @@
 {% assign lang = page.lang | default: "en" %}
-{% assign site_data = site.data.site %}
 {% assign config = site.data.config %}
+{% assign home = site.data.home %}
 
 <section class="hero">
   <div class="photo-col">
@@ -14,12 +14,16 @@
     </div>
   </div>
   <div>
-    <h1 class="name">{{ site_data.name.first }}<br/>{{ site_data.name.last }}</h1>
-    <div class="roles">{{ site_data.roles[lang] | default: site_data.roles.en }}</div>
-    <p class="bio">{{ site_data.bio[lang] | default: site_data.bio.en }}</p>
+    <h1 class="name">{{ config.name.first }}<br/>{{ config.name.last }}</h1>
+    <div class="roles">{{ home.roles[lang] | default: home.roles.en }}</div>
+    <p class="bio">{{ home.bio[lang] | default: home.bio.en }}</p>
     <div class="now-card">
-      <span class="now-label">{{ site_data.now.label[lang] | default: site_data.now.label.en }}</span>
-      <span class="now-body">{{ site_data.now.body[lang] | default: site_data.now.body.en }}</span>
+      <span class="now-label">{{ home.now.label[lang] | default: home.now.label.en }}</span>
+      <ul class="now-list">
+        {% for item in home.now.items %}
+        <li>{{ item[lang] | default: item.en }}</li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </section>
