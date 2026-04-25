@@ -1,0 +1,149 @@
+// ============ HERO ============
+
+.hero {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 44px;
+  align-items: center;
+  padding: 60px 0 48px;
+}
+
+.hero .photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero .photo {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center 22%;
+}
+
+.hero .name {
+  font-family: "Newsreader", serif;
+  font-weight: 400;
+  font-size: clamp(40px, 5.5vw, 60px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+
+  em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+}
+
+.hero .roles {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.hero .bio {
+  font-family: "Newsreader", serif;
+  font-weight: 350;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  text-wrap: pretty;
+}
+
+// Highlighter effect on bio <em> tags
+.hero .bio em {
+  font-style: italic;
+  color: inherit;
+  --hl-mid: 26%;
+  --hl-end: 22%;
+  --hl-start: 24%;
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      color-mix(in oklab, var(--accent) var(--hl-start), transparent) 1.5%,
+      color-mix(in oklab, var(--accent) var(--hl-mid), transparent) 50%,
+      color-mix(in oklab, var(--accent) var(--hl-end), transparent) 98.5%,
+      transparent 100%
+    );
+  background-repeat: no-repeat;
+  background-size: 100% 48%;
+  background-position: 0 78%;
+  padding: 0 4px;
+  border-radius: 3px 6px 4px 7px / 8px 4px 9px 5px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+// Social icon pills under photo
+.hero .socials {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero .socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+
+  &:hover {
+    background: var(--accent);
+    color: var(--paper);
+    transform: translateY(-1px);
+  }
+
+  svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+  }
+}
+
+// "Right now" card
+.now-card {
+  margin-top: 22px;
+  padding: 0;
+  max-width: 50ch;
+}
+
+.now-card .now-label {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.now-card .now-body {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--ink);
+
+  i {
+    font-style: italic;
+    color: var(--note-accent);
+  }
+}
+
+body[data-personality="off"] .now-card {
+  display: none;
+}

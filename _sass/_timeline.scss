@@ -1,0 +1,240 @@
+// ============ SECTIONS ============
+
+.section {
+  padding: 44px 0 0;
+  margin-top: 22px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 28px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.section-head .lhs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section-head h2 {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.section-head .kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section-head .more {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  align-self: end;
+}
+
+// ============ FILTER BAR ============
+
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.filter-bar button {
+  background: none;
+  border: 1px solid var(--rule-soft);
+  color: var(--ink-soft);
+  padding: 5px 11px;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+
+  &.active {
+    background: var(--accent);
+    color: var(--paper);
+    border-color: var(--accent);
+  }
+
+  &:hover:not(.active) {
+    border-color: var(--rule);
+  }
+}
+
+// ============ TIMELINE ============
+
+.timeline {
+  position: relative;
+  padding-left: 130px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 92px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--rule-soft);
+  }
+}
+
+.tl-item {
+  position: relative;
+  padding: 18px 0 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  column-gap: 28px;
+  align-items: start;
+  border-bottom: 1px solid var(--rule-soft);
+  transition: opacity 0.2s;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.tl-item .year {
+  position: absolute;
+  left: -130px;
+  top: 22px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  width: 60px;
+}
+
+// Dot — small diamond for all types
+.tl-item .dot {
+  position: absolute;
+  left: -42px;
+  top: 26px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--paper);
+  transition: background-color 0.2s;
+}
+
+.tl-item[data-kind="talk"] .dot,
+.tl-item[data-kind="paper"] .dot,
+.tl-item[data-kind="leadership"] .dot,
+.tl-item[data-kind="policy"] .dot,
+.tl-item[data-kind="press"] .dot,
+.tl-item[data-kind="award"] .dot {
+  background: var(--accent);
+  border: none;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 8px;
+  left: -42px;
+  top: 26px;
+}
+
+// Hidden elements (kind label and tag)
+.tl-kind {
+  display: none;
+}
+
+.tl-tag {
+  display: none;
+}
+
+// Title
+.tl-title {
+  font-family: "Newsreader", serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.28;
+  margin: 0 0 6px;
+  text-wrap: balance;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+// Constrain title width when note is present
+.tl-item:has(.tl-note) > .tl-title {
+  max-width: 32ch;
+}
+
+// Meta line
+.tl-meta {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tl-meta .venue {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+// Grid column assignments
+.tl-item > .tl-kind,
+.tl-item > .tl-title,
+.tl-item > .tl-meta {
+  grid-column: 1;
+}
+
+// ============ MARGIN NOTES ============
+
+.tl-note {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  align-self: start;
+  justify-self: start;
+  margin-top: 16px;
+  width: 260px;
+  font-family: "Caveat", cursive;
+  font-size: 19px;
+  line-height: 1.25;
+  color: var(--note-accent);
+  position: relative;
+  padding-left: 0;
+  transform-origin: left top;
+
+  &::before {
+    display: none;
+  }
+}
+
+body[data-personality="off"] .tl-note {
+  display: none;
+}
