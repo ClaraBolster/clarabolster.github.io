@@ -43,7 +43,6 @@
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-decoration: none;
   color: var(--accent);
   border-bottom: 1px solid currentColor;
   padding-bottom: 1px;
@@ -173,12 +172,8 @@
   margin: 0 0 6px;
   text-wrap: balance;
 
-  a {
-    text-decoration: none;
-
-    &:hover {
-      color: var(--accent);
-    }
+  a:hover {
+    color: var(--accent);
   }
 }
 

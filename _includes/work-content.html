@@ -2,15 +2,15 @@
 {% assign work = site.data.work %}
 
 <header class="page-header">
-  <div class="page-kicker">{{ work.page_kicker[lang] }}</div>
-  <h1 class="page-title">{{ work.page_title[lang] }}</h1>
-  <p class="page-intro">{{ work.page_intro[lang] }}</p>
+  <div class="page-kicker">{{ work.page_kicker[lang] | default: work.page_kicker.en }}</div>
+  <h1 class="page-title">{{ work.page_title[lang] | default: work.page_title.en }}</h1>
+  <p class="page-intro">{{ work.page_intro[lang] | default: work.page_intro.en }}</p>
 
   <nav class="toc">
     {% for sphere in work.spheres %}
     <a href="#{{ sphere.id }}">
       <span class="toc-num">{{ sphere.number }}</span>
-      <span class="toc-title">{{ sphere.title[lang] | remove: '.' }}</span>
+      <span class="toc-title">{{ sphere.title[lang] | default: sphere.title.en | remove: '.' }}</span>
     </a>
     {% endfor %}
   </nav>
@@ -20,14 +20,14 @@
 <section class="sphere" id="{{ sphere.id }}">
   <div class="sphere-head">
     <span class="sphere-num">{{ sphere.number }}</span>
-    <h2 class="sphere-title">{{ sphere.title[lang] }}</h2>
+    <h2 class="sphere-title">{{ sphere.title[lang] | default: sphere.title.en }}</h2>
   </div>
 
   <div class="sphere-body">
     <div class="spacer"></div>
     <div class="sphere-prose">
       {% for paragraph in sphere.prose %}
-      <p>{{ paragraph[lang] | default: paragraph }}</p>
+      <p>{{ paragraph[lang] | default: paragraph.en | default: paragraph }}</p>
       {% endfor %}
     </div>
 
@@ -35,21 +35,21 @@
     <aside class="sidecar">
       {% for sidecar in sphere.sidecars %}
       <div class="sidecar-block">
-        <span class="sidecar-label">{{ sidecar.label[lang] | default: sidecar.label }}</span>
+        <span class="sidecar-label">{{ sidecar.label[lang] | default: sidecar.label.en | default: sidecar.label }}</span>
         {% if sidecar.type == "media" %}
         <ul class="media-list">
           {% for item in sidecar.items %}
           <li>
-            {% if item.url %}<a href="{{ item.url }}">{{ item.title[lang] | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title }}{% endif %}
-            <span class="media-outlet">{{ item.outlet[lang] | default: item.outlet }}</span>
+            {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title }}{% endif %}
+            <span class="media-outlet">{{ item.outlet[lang] | default: item.outlet.en | default: item.outlet }}</span>
           </li>
           {% endfor %}
         </ul>
         {% else %}
         {% for item in sidecar.items %}
         <article class="pub">
-          <h3 class="pub-title">{% if item.url %}<a href="{{ item.url }}">{{ item.title[lang] | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title }}{% endif %}</h3>
-          <div class="pub-meta">{{ item.meta[lang] | default: item.meta }}</div>
+          <h3 class="pub-title">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title }}{% endif %}</h3>
+          <div class="pub-meta">{{ item.meta[lang] | default: item.meta.en | default: item.meta }}</div>
         </article>
         {% endfor %}
         {% endif %}

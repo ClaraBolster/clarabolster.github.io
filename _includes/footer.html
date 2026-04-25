@@ -1,6 +1,7 @@
 {% assign lang = page.lang | default: "en" %}
 {% assign strings = site.data.strings %}
 {% assign config = site.data.config %}
+{% assign cv_url = config.cv[lang] | default: config.cv.en %}
 
 {% if lang == "en" %}
   {% assign work_url = "/work/" %}
@@ -11,9 +12,9 @@
 {% endif %}
 
 <footer id="contact">
-  <span>&copy; {{ config.copyright_year }} {{ config.copyright_name }} &middot; {{ config.copyright_location }}</span>
+  <span>&copy; {{ 'now' | date: '%Y' }} {{ config.copyright_name }} &middot; {{ config.copyright_location }}</span>
   <span class="links-row">
-    <a href="{{ work_url }}">{{ strings.footer.work[lang] }}</a>
-    <a href="{{ home_url }}#cv">{{ strings.footer.cv[lang] }}</a>
+    <a href="{{ work_url }}">{{ strings.footer.work[lang] | default: strings.footer.work.en }}</a>
+    <a href="{{ cv_url }}" target="_blank" rel="noopener">{{ strings.footer.cv[lang] | default: strings.footer.cv.en }}</a>
   </span>
 </footer>

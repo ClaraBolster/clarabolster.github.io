@@ -27,8 +27,8 @@
 }
 
 .nav .links a {
-  text-decoration: none;
   opacity: 0.78;
+  transition: opacity 0.15s, color 0.15s;
 }
 
 .nav .links a:hover {
@@ -41,6 +41,7 @@
   color: var(--accent);
   border-bottom: 1px solid var(--accent);
   padding-bottom: 2px;
+  margin-bottom: -3px;
 }
 
 // Theme toggle — icon-only circular button
@@ -73,7 +74,6 @@
 
 // Language toggle — segmented pill (rendered as <a> link)
 .nav .lang-toggle {
-  text-decoration: none;
   color: inherit;
   border: 1px solid var(--rule-soft);
   border-radius: 999px;
@@ -99,6 +99,7 @@
 .nav .lang-toggle .lang-seg.active {
   color: var(--paper);
   background: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
 }
 
 .nav .lang-toggle:hover .lang-seg:not(.active) {
