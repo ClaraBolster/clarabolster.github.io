@@ -1,0 +1,19 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign strings = site.data.strings %}
+{% assign config = site.data.config %}
+
+{% if lang == "en" %}
+  {% assign work_url = "/work/" %}
+  {% assign home_url = "/" %}
+{% else %}
+  {% assign work_url = "/fr/work/" %}
+  {% assign home_url = "/fr/" %}
+{% endif %}
+
+<footer id="contact">
+  <span>&copy; {{ config.copyright_year }} {{ config.copyright_name }} &middot; {{ config.copyright_location }}</span>
+  <span class="links-row">
+    <a href="{{ work_url }}">{{ strings.footer.work[lang] }}</a>
+    <a href="{{ home_url }}#cv">{{ strings.footer.cv[lang] }}</a>
+  </span>
+</footer>

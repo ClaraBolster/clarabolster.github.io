@@ -1,1 +1,39 @@
-theme: jekyll-theme-tactile
+title: Clara Bolster-Foucault
+description: Health-equity researcher, epidemiologist, and Executive Director of Monthly Dignity
+url: "https://clarabolster.com"
+baseurl: ""
+
+# Default language
+lang: en
+
+# Build
+markdown: kramdown
+permalink: pretty
+exclude:
+  - README.md
+  - material_for_claude/
+  - .superpowers/
+  - docs/
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+
+# Sass
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Plugins (supported by GitHub Pages)
+plugins:
+  - jekyll-seo-tag
+
+# Default front matter — pages under fr/ get lang: fr automatically
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: "en"
+  - scope:
+      path: "fr"
+    values:
+      lang: "fr"

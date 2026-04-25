@@ -1,0 +1,25 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign site_data = site.data.site %}
+{% assign config = site.data.config %}
+
+<section class="hero">
+  <div class="photo-col">
+    <div class="photo" style="background-image: url('{{ config.photo }}')" aria-label="{{ config.photo_alt[lang] }}"></div>
+    <div class="socials">
+      {% for social in site.data.social %}
+      <a href="{% if social.use_lang_email %}mailto:{{ config.email[lang] }}{% else %}{{ social.url }}{% endif %}" aria-label="{{ social.name }}" title="{{ social.name }}">
+        {% include social-icons.html icon=social.icon %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    <h1 class="name">{{ site_data.name.first }}<br/>{{ site_data.name.last }}</h1>
+    <div class="roles">{{ site_data.roles[lang] }}</div>
+    <p class="bio">{{ site_data.bio[lang] }}</p>
+    <div class="now-card">
+      <span class="now-label">{{ site_data.now.label[lang] }}</span>
+      <span class="now-body">{{ site_data.now.body[lang] }}</span>
+    </div>
+  </div>
+</section>

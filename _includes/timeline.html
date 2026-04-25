@@ -1,0 +1,44 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign strings = site.data.strings %}
+{% assign timeline = site.data.timeline %}
+
+{% if lang == "en" %}
+  {% assign home_url = "/" %}
+{% else %}
+  {% assign home_url = "/fr/" %}
+{% endif %}
+
+<section class="section" id="timeline">
+  <div class="section-head">
+    <div class="lhs">
+      <h2>{{ strings.timeline.section_title[lang] }}</h2>
+    </div>
+    <a class="more" href="{{ home_url }}{{ strings.timeline.more_url }}">{{ strings.timeline.more_label[lang] }}</a>
+  </div>
+
+  <div class="filter-bar" id="filters">
+    {% for filter in strings.timeline.filters %}
+    <button {% if filter.key == "all" %}class="active"{% endif %} data-filter="{{ filter.key }}">{{ filter.label[lang] }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="timeline" id="timeline-list">
+    {% for item in timeline.items %}
+    <article class="tl-item" data-kind="{{ item.kind }}">
+      <span class="year">{{ item.year }}</span>
+      <span class="dot"></span>
+      <h3 class="tl-title">
+        {% if item.url %}<a href="{{ item.url }}">{{ item.title[lang] | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title }}{% endif %}
+      </h3>
+      {% assign venue_text = item.venue[lang] | default: item.venue %}
+      {% if venue_text %}
+      <div class="tl-meta"><span class="venue">{{ venue_text }}</span></div>
+      {% endif %}
+      {% assign note_text = item.note[lang] | default: item.note %}
+      {% if note_text %}
+      <aside class="tl-note" style="transform: rotate({{ item.note_rotation | default: '-1.5deg' }});">{{ note_text }}</aside>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,15 @@
+{% assign lang = page.lang | default: "en" %}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  {% include head.html %}
+</head>
+<body data-theme="light" data-accent="teal" data-personality="on">
+  <div class="page">
+    {% include nav.html %}
+    {{ content }}
+    {% include footer.html %}
+  </div>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

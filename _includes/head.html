@@ -1,0 +1,53 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign site_data = site.data.site %}
+{% assign config = site.data.config %}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{{ page.title | default: site.title }}</title>
+<meta name="description" content="{{ site_data.meta_description[lang] | default: site.description }}" />
+<link rel="canonical" href="{{ config.site_url }}{{ page.url }}" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ page.title | default: site.title }}" />
+<meta property="og:description" content="{{ site_data.meta_description[lang] | default: site.description }}" />
+<meta property="og:url" content="{{ config.site_url }}{{ page.url }}" />
+<meta property="og:image" content="{{ config.site_url }}{{ config.og_image }}" />
+<meta property="og:type" content="{{ config.og_type }}" />
+<meta property="og:locale" content="{% if lang == 'fr' %}fr_CA{% else %}en_CA{% endif %}" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ page.title | default: site.title }}" />
+<meta name="twitter:description" content="{{ site_data.meta_description[lang] | default: site.description }}" />
+<meta name="twitter:image" content="{{ config.site_url }}{{ config.og_image }}" />
+
+<!-- Alternate language -->
+{% if lang == "en" %}
+<link rel="alternate" hreflang="fr" href="{{ config.site_url }}/fr{{ page.url }}" />
+<link rel="alternate" hreflang="en" href="{{ config.site_url }}{{ page.url }}" />
+{% else %}
+{% assign en_url = page.url | replace: "/fr/", "/" %}
+<link rel="alternate" hreflang="en" href="{{ config.site_url }}{{ en_url }}" />
+<link rel="alternate" hreflang="fr" href="{{ config.site_url }}{{ page.url }}" />
+{% endif %}
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+
+<!-- Google Analytics -->
+{% if config.google_analytics_id != "" and config.google_analytics_id %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ config.google_analytics_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ config.google_analytics_id }}');
+</script>
+{% endif %}

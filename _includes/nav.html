@@ -1,0 +1,25 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign strings = site.data.strings %}
+
+{% if lang == "en" %}
+  {% assign home_url = "/" %}
+  {% assign work_url = "/work/" %}
+  {% assign alt_url = "/fr" | append: page.url %}
+{% else %}
+  {% assign home_url = "/fr/" %}
+  {% assign work_url = "/fr/work/" %}
+  {% assign alt_url = page.url | replace: "/fr/", "/" %}
+{% endif %}
+
+<nav class="nav">
+  <a href="{{ home_url }}" class="wordmark">{{ strings.wordmark }}</a>
+  <div class="links">
+    <a href="{{ work_url }}"{% if page.page_type == "work" %} class="current"{% endif %}>{{ strings.nav.work[lang] }}</a>
+    <a href="{{ home_url }}#cv">{{ strings.nav.cv[lang] }}</a>
+    <a href="{{ alt_url }}" class="lang-toggle" aria-label="{{ strings.lang_toggle.label[lang] }}">
+      <span class="lang-seg{% if lang == 'en' %} active{% endif %}">EN</span>
+      <span class="lang-seg{% if lang == 'fr' %} active{% endif %}">FR</span>
+    </a>
+    <button class="theme-toggle" id="themeBtn" aria-label="{{ strings.theme_toggle.label[lang] }}"></button>
+  </div>
+</nav>
