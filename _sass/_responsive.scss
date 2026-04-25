@@ -1,0 +1,144 @@
+// ============ RESPONSIVE ============
+
+// Medium widths — collapse note gutter inline
+@media (max-width: 1020px) {
+  .tl-item {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+  }
+
+  .tl-item:has(.tl-note) > .tl-title {
+    max-width: none;
+  }
+
+  .tl-note {
+    grid-column: 1;
+    grid-row: auto;
+    width: auto;
+    max-width: 56ch;
+    margin-top: 12px;
+    transform: rotate(-1deg) !important;
+  }
+}
+
+// Mobile
+@media (max-width: 720px) {
+  .page {
+    padding: 24px 22px 60px;
+  }
+
+  .nav .links {
+    gap: 14px;
+    font-size: 12px;
+
+    a:not(:last-child) {
+      display: none;
+    }
+  }
+
+  .nav .lang-toggle {
+    font-size: 11px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 0;
+    text-align: left;
+  }
+
+  .hero .photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .timeline {
+    padding-left: 76px;
+
+    &::before {
+      left: 56px;
+    }
+  }
+
+  .tl-item .year {
+    left: -76px;
+    width: 40px;
+    font-size: 11px;
+    text-align: left;
+  }
+
+  .tl-item .dot {
+    left: -22px;
+  }
+
+  .tl-item[data-kind="talk"] .dot {
+    left: -22px;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ============ WORK PAGE RESPONSIVE ============
+
+@media (max-width: 1020px) {
+  .sphere-body {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .sidecar {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 36px;
+    margin-top: 36px;
+    padding-left: 112px;
+    position: static;
+  }
+
+  .sidecar-block {
+    flex: 1 1 280px;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .toc {
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    a {
+      padding: 12px 0;
+    }
+  }
+
+  .page-title {
+    font-size: 38px;
+  }
+
+  .sphere {
+    padding-top: 56px;
+    margin-top: 28px;
+  }
+
+  .sphere-head,
+  .sphere-body {
+    grid-template-columns: 1fr;
+  }
+
+  .sphere-num {
+    border-top: none;
+    padding-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .sphere-body .spacer {
+    display: none;
+  }
+
+  .sidecar {
+    padding-left: 0;
+  }
+}
