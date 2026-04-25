@@ -1,5 +1,4 @@
 {% assign lang = page.lang | default: "en" %}
-{% assign strings = site.data.strings %}
 {% assign config = site.data.config %}
 {% assign cv_url = config.cv[lang] | default: config.cv.en %}
 
@@ -14,14 +13,14 @@
 {% endif %}
 
 <nav class="nav">
-  <a href="{{ home_url }}" class="wordmark">{{ strings.wordmark }}</a>
+  <a href="{{ home_url }}" class="wordmark">{{ config.wordmark }}</a>
   <div class="links">
-    <a href="{{ work_url }}"{% if page.page_type == "work" %} class="current"{% endif %}>{{ strings.nav.work[lang] | default: strings.nav.work.en }}</a>
-    <a href="{{ cv_url }}" target="_blank" rel="noopener">{{ strings.nav.cv[lang] | default: strings.nav.cv.en }}</a>
-    <a href="{{ alt_url }}" class="lang-toggle" aria-label="{{ strings.lang_toggle.label[lang] | default: strings.lang_toggle.label.en }}">
+    <a href="{{ work_url }}"{% if page.page_type == "work" %} class="current"{% endif %}>{{ config.nav.work[lang] | default: config.nav.work.en }}</a>
+    <a href="{{ cv_url }}" target="_blank" rel="noopener">{{ config.nav.cv[lang] | default: config.nav.cv.en }}</a>
+    <a href="{{ alt_url }}" class="lang-toggle" aria-label="{{ config.lang_toggle_label[lang] | default: config.lang_toggle_label.en }}">
       <span class="lang-seg{% if lang == 'en' %} active{% endif %}">EN</span>
       <span class="lang-seg{% if lang == 'fr' %} active{% endif %}">FR</span>
     </a>
-    <button class="theme-toggle" id="themeBtn" aria-label="{{ strings.theme_toggle.label[lang] | default: strings.theme_toggle.label.en }}"></button>
+    <button class="theme-toggle" id="themeBtn" aria-label="{{ config.theme_toggle_label[lang] | default: config.theme_toggle_label.en }}"></button>
   </div>
 </nav>
