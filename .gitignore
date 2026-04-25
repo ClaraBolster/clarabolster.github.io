@@ -1,0 +1,26 @@
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Ruby
+Gemfile.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Design source material
+material_for_claude/
+
+# Superpowers plugin cache
+.superpowers/
+
+# Plan docs
+docs/
