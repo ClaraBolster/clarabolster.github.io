@@ -31,7 +31,7 @@
     gap: 14px;
     font-size: 12px;
 
-    a:not(:last-child) {
+    a:not(:last-child):not(.current) {
       display: none;
     }
   }

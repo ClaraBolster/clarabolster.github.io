@@ -1,0 +1,106 @@
+// ============ NAVIGATION ============
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.wordmark {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+}
+
+.nav .links {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+.nav .links a {
+  text-decoration: none;
+  opacity: 0.78;
+}
+
+.nav .links a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.nav .links a.current {
+  opacity: 1;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+// Theme toggle — icon-only circular button
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--rule-soft);
+  color: inherit;
+  padding: 6px;
+  border-radius: 999px;
+  cursor: pointer;
+  opacity: 0.78;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+
+  svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  &:hover {
+    opacity: 1;
+    border-color: var(--rule);
+  }
+}
+
+// Language toggle — segmented pill (rendered as <a> link)
+.nav .lang-toggle {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--rule-soft);
+  border-radius: 999px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.nav .lang-toggle .lang-seg {
+  padding: 0 10px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  color: var(--muted);
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.nav .lang-toggle .lang-seg.active {
+  color: var(--paper);
+  background: var(--accent);
+}
+
+.nav .lang-toggle:hover .lang-seg:not(.active) {
+  color: var(--ink-soft);
+}
