@@ -52,12 +52,12 @@
   padding: 6px;
   border-radius: 999px;
   cursor: pointer;
-  opacity: 0.78;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 28px;
   height: 28px;
+  transition: border-color 0.15s;
 
   svg {
     width: 13px;
@@ -67,8 +67,7 @@
   }
 
   &:hover {
-    opacity: 1;
-    border-color: var(--rule);
+    border-color: var(--accent);
   }
 }
 
@@ -100,6 +99,14 @@
   color: var(--paper);
   background: var(--accent);
   box-shadow: 0 0 0 1px var(--accent);
+}
+
+.nav .lang-toggle {
+  transition: border-color 0.15s;
+}
+
+.nav .lang-toggle:hover {
+  border-color: var(--accent);
 }
 
 .nav .lang-toggle:hover .lang-seg:not(.active) {
