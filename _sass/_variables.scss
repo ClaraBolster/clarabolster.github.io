@@ -1,0 +1,72 @@
+// ============ COLOR SYSTEM ============
+// Light: warmer parchment, but cool enough not to read "cream"
+// Dark: deep navy, not black
+// Accent: deep teal default; oxblood, plum, ink alternates
+
+:root {
+  --paper: #f1ece0;
+  --paper-2: #e6dfcf;
+  --ink: #1a1f24;
+  --ink-soft: #3e454c;
+  --muted: #6f7077;
+  --rule: rgba(26, 31, 36, 0.85);
+  --rule-soft: rgba(26, 31, 36, 0.18);
+  --accent: #0e7a72;
+  --accent-soft: #cce8e3;
+  --note-accent: #9c2e3a;
+}
+
+// Accent variants — light mode
+body[data-accent="oxblood"] {
+  --accent: #9c2e3a;
+  --accent-soft: #f1d8dc;
+  --note-accent: #0e7a72;
+}
+body[data-accent="plum"] {
+  --accent: #6a3076;
+  --accent-soft: #ead8ee;
+  --note-accent: #9c2e3a;
+}
+body[data-accent="ink"] {
+  --accent: #1a1f24;
+  --accent-soft: #d6dadf;
+  --note-accent: #9c2e3a;
+}
+
+// Dark mode
+body[data-theme="dark"] {
+  --paper: #0d1424;
+  --paper-2: #131c30;
+  --ink: #ece9df;
+  --ink-soft: #c0bdb1;
+  --muted: #7e8492;
+  --rule: rgba(236, 233, 223, 0.85);
+  --rule-soft: rgba(236, 233, 223, 0.16);
+  --accent-soft: rgba(255, 255, 255, 0.08);
+}
+
+body[data-theme="dark"] .hero .bio em {
+  --hl-start: 55%;
+  --hl-mid: 60%;
+  --hl-end: 50%;
+  color: var(--ink);
+  font-weight: 420;
+}
+
+// Dark mode accent variants
+body[data-theme="dark"][data-accent="teal"] {
+  --accent: #6dc5bb;
+  --note-accent: #e08993;
+}
+body[data-theme="dark"][data-accent="oxblood"] {
+  --accent: #e08993;
+  --note-accent: #6dc5bb;
+}
+body[data-theme="dark"][data-accent="plum"] {
+  --accent: #c8a8d5;
+  --note-accent: #e08993;
+}
+body[data-theme="dark"][data-accent="ink"] {
+  --accent: #ece9df;
+  --note-accent: #e08993;
+}

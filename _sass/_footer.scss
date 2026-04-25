@@ -1,0 +1,29 @@
+// ============ FOOTER ============
+
+footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule-soft);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.links-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
