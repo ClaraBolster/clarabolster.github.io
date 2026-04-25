@@ -24,7 +24,7 @@ cv:
 google_analytics_id: ""
 
 # Photo
-photo: "/assets/images/clara-headshot.jpg"
+photo: "/assets/images/clara-headshot.webp"
 photo_alt:
   en: "Photo of Clara Bolster-Foucault"
   fr: "Photo de Clara Bolster-Foucault"
