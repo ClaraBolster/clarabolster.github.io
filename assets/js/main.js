@@ -1,31 +1,44 @@
+// ============ LANGUAGE REDIRECT ============
+
+(function () {
+  // Only redirect on first visit — if user has toggled lang, respect that
+  var langPref = null;
+  try { langPref = localStorage.getItem("cbf-lang"); } catch (e) {}
+
+  if (!langPref) {
+    // First visit: check browser language
+    var browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    var onFrench = location.pathname.indexOf("/fr/") === 0;
+
+    if (browserLang === "fr" && !onFrench) {
+      location.replace("/fr" + location.pathname + location.search + location.hash);
+      return;
+    }
+  }
+
+  // Save preference when user clicks the lang toggle
+  var langToggle = document.querySelector(".lang-toggle");
+  if (langToggle) {
+    langToggle.addEventListener("click", function () {
+      var goingToFr = location.pathname.indexOf("/fr/") !== 0;
+      try { localStorage.setItem("cbf-lang", goingToFr ? "fr" : "en"); } catch (e) {}
+    });
+  }
+})();
+
 // ============ THEME SYSTEM ============
 
 (function () {
-  // Read persisted theme from localStorage
   var stored = null;
-  try {
-    stored = JSON.parse(localStorage.getItem("cbf-theme"));
-  } catch (e) {}
+  try { stored = localStorage.getItem("cbf-theme"); } catch (e) {}
 
-  var state = {
-    theme: (stored && stored.theme) || "light",
-    accent: (stored && stored.accent) || "teal",
-    personality: true,
-  };
-
-  // Validate
-  if (["light", "dark", "auto"].indexOf(state.theme) === -1) {
-    state.theme = "light";
-  }
+  var theme = stored || "light";
+  if (["light", "dark", "auto"].indexOf(theme) === -1) theme = "light";
 
   var mq = window.matchMedia("(prefers-color-scheme: dark)");
 
   function resolved() {
-    return state.theme === "auto"
-      ? mq.matches
-        ? "dark"
-        : "light"
-      : state.theme;
+    return theme === "auto" ? (mq.matches ? "dark" : "light") : theme;
   }
 
   var ICONS = {
@@ -38,42 +51,31 @@
   var LABELS = { light: "LIGHT", dark: "DARK", auto: "AUTO" };
 
   function persist() {
-    try {
-      localStorage.setItem(
-        "cbf-theme",
-        JSON.stringify({ theme: state.theme, accent: state.accent })
-      );
-    } catch (e) {}
+    try { localStorage.setItem("cbf-theme", theme); } catch (e) {}
   }
 
   function apply() {
     document.body.dataset.theme = resolved();
-    document.body.dataset.themePref = state.theme;
-    document.body.dataset.accent = state.accent;
-    document.body.dataset.personality = state.personality ? "on" : "off";
+    document.body.dataset.themePref = theme;
 
     var btn = document.getElementById("themeBtn");
     if (btn) {
-      btn.innerHTML = ICONS[state.theme];
-      btn.setAttribute(
-        "aria-label",
-        "Theme: " + LABELS[state.theme] + " — click to cycle"
-      );
-      btn.setAttribute("title", "Theme: " + LABELS[state.theme]);
+      btn.innerHTML = ICONS[theme];
+      btn.setAttribute("aria-label", "Theme: " + LABELS[theme]);
+      btn.setAttribute("title", "Theme: " + LABELS[theme]);
     }
   }
 
   apply();
   mq.addEventListener("change", function () {
-    if (state.theme === "auto") apply();
+    if (theme === "auto") apply();
   });
 
-  // Theme button — cycles light → dark → auto
   var themeBtn = document.getElementById("themeBtn");
   if (themeBtn) {
     themeBtn.addEventListener("click", function () {
       var order = ["light", "dark", "auto"];
-      state.theme = order[(order.indexOf(state.theme) + 1) % order.length];
+      theme = order[(order.indexOf(theme) + 1) % order.length];
       apply();
       persist();
     });
