@@ -26,12 +26,12 @@
   letter-spacing: 0.01em;
 }
 
-.nav .links a {
+.nav .links a:not(.lang-toggle) {
   opacity: 0.78;
   transition: opacity 0.15s, color 0.15s;
 }
 
-.nav .links a:hover {
+.nav .links a:not(.lang-toggle):hover {
   opacity: 1;
   color: var(--accent);
 }

@@ -87,6 +87,7 @@
 .timeline {
   position: relative;
   padding-left: 130px;
+  overflow: clip;
 
   &::before {
     content: "";
