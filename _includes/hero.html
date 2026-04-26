@@ -16,12 +16,12 @@
   <div>
     <h1 class="name">{{ config.name.first }}<br/>{{ config.name.last }}</h1>
     <div class="roles">{{ home.roles[lang] | default: home.roles.en }}</div>
-    <p class="bio">{{ home.bio[lang] | default: home.bio.en }}</p>
+    <div class="bio">{{ home.bio[lang] | default: home.bio.en | markdownify }}</div>
     <div class="now-card">
       <span class="now-label">{{ home.now.label[lang] | default: home.now.label.en }}</span>
       <ul class="now-list">
         {% for item in home.now.items %}
-        <li>{{ item[lang] | default: item.en }}</li>
+        <li>{{ item[lang] | default: item.en | markdownify | remove: '<p>' | remove: '</p>' }}</li>
         {% endfor %}
       </ul>
     </div>

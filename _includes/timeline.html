@@ -23,15 +23,16 @@
       <span class="year">{{ item.year }}</span>
       <span class="dot"></span>
       <h3 class="tl-title">
-        {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title }}{% endif %}
+        {% assign title_text = item.title[lang] | default: item.title.en | default: item.title %}
+        {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ title_text | markdownify | remove: '<p>' | remove: '</p>' }}</a>{% else %}{{ title_text | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}
       </h3>
       {% assign venue_text = item.venue[lang] | default: item.venue.en | default: item.venue %}
       {% if venue_text %}
-      <div class="tl-meta"><span class="venue">{{ venue_text }}</span></div>
+      <div class="tl-meta"><span class="venue">{{ venue_text | markdownify | remove: '<p>' | remove: '</p>' }}</span></div>
       {% endif %}
       {% assign note_text = item.note[lang] | default: item.note.en | default: item.note %}
       {% if note_text %}
-      <aside class="tl-note" style="transform: rotate({{ item.note_rotation | default: '-1.5deg' }});">{{ note_text }}</aside>
+      <aside class="tl-note" style="transform: rotate({{ item.note_rotation | default: '-1.5deg' }});">{{ note_text | markdownify | remove: '<p>' | remove: '</p>' }}</aside>
       {% endif %}
     </article>
     {% endfor %}

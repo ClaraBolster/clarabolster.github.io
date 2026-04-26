@@ -4,7 +4,7 @@
 <header class="page-header">
   <div class="page-kicker">{{ work.page_kicker[lang] | default: work.page_kicker.en }}</div>
   <h1 class="page-title">{{ work.page_title[lang] | default: work.page_title.en }}</h1>
-  <p class="page-intro">{{ work.page_intro[lang] | default: work.page_intro.en }}</p>
+  <div class="page-intro">{{ work.page_intro[lang] | default: work.page_intro.en | markdownify }}</div>
 
   <nav class="toc">
     {% for sphere in work.spheres %}
@@ -27,7 +27,7 @@
     <div class="spacer"></div>
     <div class="sphere-prose">
       {% for paragraph in sphere.prose %}
-      <p>{{ paragraph[lang] | default: paragraph.en | default: paragraph }}</p>
+      {{ paragraph[lang] | default: paragraph.en | default: paragraph | markdownify }}
       {% endfor %}
     </div>
 
@@ -40,16 +40,16 @@
         <ul class="media-list">
           {% for item in sidecar.items %}
           <li>
-            {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title }}{% endif %}
-            <span class="media-outlet">{{ item.outlet[lang] | default: item.outlet.en | default: item.outlet }}</span>
+            {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}
+            <span class="media-outlet">{{ item.outlet[lang] | default: item.outlet.en | default: item.outlet | markdownify | remove: '<p>' | remove: '</p>' }}</span>
           </li>
           {% endfor %}
         </ul>
         {% else %}
         {% for item in sidecar.items %}
         <article class="pub">
-          <h3 class="pub-title">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title }}{% endif %}</h3>
-          <div class="pub-meta">{{ item.meta[lang] | default: item.meta.en | default: item.meta }}</div>
+          <h3 class="pub-title">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}</h3>
+          <div class="pub-meta">{{ item.meta[lang] | default: item.meta.en | default: item.meta | markdownify | remove: '<p>' | remove: '</p>' }}</div>
         </article>
         {% endfor %}
         {% endif %}

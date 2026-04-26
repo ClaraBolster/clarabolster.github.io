@@ -64,3 +64,16 @@ html[data-theme="dark"] {
   color: var(--ink);
   font-weight: 420;
 }
+
+@mixin prose-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+
+  &:hover {
+    color: var(--accent);
+  }
+}

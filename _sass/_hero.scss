@@ -55,6 +55,12 @@
   color: var(--ink-soft);
   max-width: 58ch;
   text-wrap: pretty;
+
+  p { margin: 0; }
+
+  a {
+    @include prose-link;
+  }
 }
 
 // Highlighter effect on bio <em> tags
