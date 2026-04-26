@@ -110,7 +110,8 @@
   border-bottom: 1px solid var(--rule-soft);
   transition: opacity 0.2s;
 
-  &:last-child {
+  &:last-child,
+  &.last-visible {
     border-bottom: none;
   }
 }
@@ -160,8 +161,15 @@
   margin: 0 0 6px;
   text-wrap: pretty;
 
-  a:hover {
-    color: var(--accent);
+  a {
+    text-decoration: underline;
+    text-decoration-color: var(--rule-soft);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s;
+
+    &:hover {
+      text-decoration-color: var(--accent);
+    }
   }
 }
 

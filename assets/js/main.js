@@ -80,10 +80,14 @@
         x.classList.toggle("active", x === b);
       });
       var f = b.dataset.filter;
+      var lastVisible = null;
       items.forEach(function (it) {
         var match = f === "all" || it.dataset.kind === f;
         it.style.display = match ? "" : "none";
+        it.classList.remove("last-visible");
+        if (match) lastVisible = it;
       });
+      if (lastVisible) lastVisible.classList.add("last-visible");
     });
   }
 })();
