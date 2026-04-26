@@ -27,6 +27,8 @@ sass:
 # Plugins (supported by GitHub Pages)
 plugins:
   - jekyll-seo-tag
+  - jekyll-target-blank
+
 
 # Default front matter — pages under fr/ get lang: fr automatically
 defaults:
