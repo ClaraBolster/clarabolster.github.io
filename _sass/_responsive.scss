@@ -7,10 +7,6 @@
     column-gap: 0;
   }
 
-  .tl-item:has(.tl-note) > .tl-title {
-    max-width: none;
-  }
-
   .tl-note {
     grid-column: 1;
     grid-row: auto;
@@ -64,11 +60,7 @@
   }
 
   .tl-item .dot {
-    left: -22px;
-  }
-
-  .tl-item[data-kind="talk"] .dot {
-    left: -22px;
+    left: -20px;
   }
 
   footer {

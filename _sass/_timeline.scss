@@ -126,34 +126,21 @@
   width: 60px;
 }
 
-// Dot — small diamond for all types
+// Dot on the vertical line
+// left = line position minus timeline padding; translateX centers it
 .tl-item .dot {
   position: absolute;
-  left: -42px;
+  left: -38px;
   top: 26px;
   width: 9px;
   height: 9px;
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--paper);
+  transform: translateX(-50%);
   transition: background-color 0.2s;
 }
 
-.tl-item[data-kind="talk"] .dot,
-.tl-item[data-kind="paper"] .dot,
-.tl-item[data-kind="leadership"] .dot,
-.tl-item[data-kind="policy"] .dot,
-.tl-item[data-kind="press"] .dot,
-.tl-item[data-kind="award"] .dot {
-  background: var(--accent);
-  border: none;
-  border-radius: 1px;
-  transform: rotate(45deg);
-  width: 8px;
-  height: 8px;
-  left: -42px;
-  top: 26px;
-}
 
 // Hidden elements (kind label and tag)
 .tl-kind {
@@ -178,10 +165,6 @@
   }
 }
 
-// Constrain title width when note is present
-.tl-item:has(.tl-note) > .tl-title {
-  max-width: 32ch;
-}
 
 // Meta line
 .tl-meta {
