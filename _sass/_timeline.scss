@@ -104,8 +104,8 @@
   position: relative;
   padding: 18px 0 22px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
-  column-gap: 28px;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  column-gap: 20px;
   align-items: start;
   border-bottom: 1px solid var(--rule-soft);
   transition: opacity 0.2s;
@@ -158,7 +158,7 @@
   font-size: 21px;
   line-height: 1.28;
   margin: 0 0 6px;
-  text-wrap: balance;
+  text-wrap: pretty;
 
   a:hover {
     color: var(--accent);
