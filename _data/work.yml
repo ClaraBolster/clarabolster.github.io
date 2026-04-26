@@ -1,0 +1,18 @@
+# ======================================================
+# Work page
+# Translatable fields use en:/fr: keys.
+# Sidecar items (publications, media) use the same convention.
+# ======================================================
+
+page_kicker:
+  en: "Work"
+  fr: "Travaux"
+
+page_title:
+  en: "What I'm working on"
+  fr: "Ce sur quoi je travaille"
+
+page_intro:
+  en: "I'm interested in <em>the people health systems and social policies</em> were designed to reach but often miss. My work explores where those gaps are, who falls into them, and what it would take to close them. In practice, I conduct quantitative research that tries to measure disparities in health and access to care, lead community-based programs that try to reach underserved populations, and engage in the slower work of translating both into policy change that can address systemic inequities."
+  fr: "Je m'intéresse aux <em>personnes que les systèmes de santé et les politiques sociales</em> sont censés rejoindre, mais qu'ils ratent trop souvent. Mon travail cherche à comprendre où se trouvent ces lacunes, qui y tombe, et ce qu'il faudrait pour les combler. Concrètement, je mène des recherches quantitatives visant à mesurer les inégalités en santé et dans l'accès aux soins, je dirige des programmes communautaires qui cherchent à rejoindre les populations mal desservies, et je m'engage dans le travail plus lent de traduire les deux en changements de politique qui peuvent réduire ces iniquités systémiques."
+
