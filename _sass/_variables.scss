@@ -25,19 +25,42 @@ body[data-theme="dark"] {
   --muted: #7e8492;
   --rule: rgba(236, 233, 223, 0.85);
   --rule-soft: rgba(236, 233, 223, 0.16);
+  --accent: #6dc5bb;
   --accent-soft: rgba(255, 255, 255, 0.08);
+  --note-accent: #e08993;
 }
 
-body[data-theme="dark"] .hero .bio em {
+// ============ SHARED MIXINS ============
+
+// Highlighter effect used on <em> tags in prose blocks
+@mixin highlight-em {
+  font-style: italic;
+  color: inherit;
+  --hl-start: 24%;
+  --hl-mid: 26%;
+  --hl-end: 22%;
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      color-mix(in oklab, var(--accent) var(--hl-start), transparent) 1.5%,
+      color-mix(in oklab, var(--accent) var(--hl-mid), transparent) 50%,
+      color-mix(in oklab, var(--accent) var(--hl-end), transparent) 98.5%,
+      transparent 100%
+    );
+  background-repeat: no-repeat;
+  background-size: 100% 48%;
+  background-position: 0 78%;
+  padding: 0 4px;
+  border-radius: 3px 6px 4px 7px / 8px 4px 9px 5px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+@mixin highlight-em-dark {
   --hl-start: 55%;
   --hl-mid: 60%;
   --hl-end: 50%;
   color: var(--ink);
   font-weight: 420;
-}
-
-// Dark mode accent
-body[data-theme="dark"] {
-  --accent: #6dc5bb;
-  --note-accent: #e08993;
 }

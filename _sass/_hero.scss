@@ -59,27 +59,11 @@
 
 // Highlighter effect on bio <em> tags
 .hero .bio em {
-  font-style: italic;
-  color: inherit;
-  --hl-mid: 26%;
-  --hl-end: 22%;
-  --hl-start: 24%;
-  background-image:
-    linear-gradient(
-      to right,
-      transparent 0%,
-      color-mix(in oklab, var(--accent) var(--hl-start), transparent) 1.5%,
-      color-mix(in oklab, var(--accent) var(--hl-mid), transparent) 50%,
-      color-mix(in oklab, var(--accent) var(--hl-end), transparent) 98.5%,
-      transparent 100%
-    );
-  background-repeat: no-repeat;
-  background-size: 100% 48%;
-  background-position: 0 78%;
-  padding: 0 4px;
-  border-radius: 3px 6px 4px 7px / 8px 4px 9px 5px;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  @include highlight-em;
+}
+
+body[data-theme="dark"] .hero .bio em {
+  @include highlight-em-dark;
 }
 
 // Social icon pills under photo
