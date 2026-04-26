@@ -1,0 +1,115 @@
+---
+layout: default
+title: "404"
+permalink: /404.html
+---
+
+{% comment %}
+  Detect language from the URL the user tried to visit.
+  GitHub Pages serves one 404.html for all paths, so we check
+  if the path started with /fr/ to flip to French.
+{% endcomment %}
+
+<section class="error-page" id="error-page">
+  <div class="error-copy">
+    <div class="error-label">
+      <span data-en>HTTP 404 · Resource not found</span>
+      <span data-fr hidden>HTTP 404 · Ressource introuvable</span>
+    </div>
+
+    <h1 class="error-heading">
+      <span data-en>
+        This page is
+        <em>missing <span class="note-inline">(not)</span><br/>at random</em><span class="dot">.</span>
+      </span>
+      <span data-fr hidden>
+        Cette page est
+        <em>manquante <span class="note-inline">(non)</span><br/>aléatoirement</em><span class="dot">.</span>
+      </span>
+    </h1>
+
+    <p class="error-body">
+      <span data-en>Either the link's gone stale, or the page was never here to begin with.</span>
+      <span data-fr hidden>Le lien a expiré, ou la page n'a jamais existé.</span>
+    </p>
+
+    <div class="error-actions">
+      <a href="/" class="error-btn" id="error-home-link">
+        <span data-en>← Back to home</span>
+        <span data-fr hidden>← Retour à l'accueil</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="error-table-wrap">
+    <aside class="error-aside">
+      <span data-en>if you got here from an old link, that's on me.<br/>drop me a note &amp; I'll send the real one. — cbf.</span>
+      <span data-fr hidden>si un vieux lien vous a mené ici, c'est ma faute.<br/>écrivez-moi &amp; je vous enverrai le bon. — cbf.</span>
+    </aside>
+
+    <div class="error-table">
+    <div class="error-table-header">
+      <span data-en>Table 1 · Site routes</span>
+      <span data-fr hidden>Tableau 1 · Routes du site</span>
+      <span>n = 4</span>
+    </div>
+
+    <div class="error-table-row">
+      <span>/</span>
+      <span>200</span>
+      <span data-en>Home</span><span data-fr hidden>Accueil</span>
+    </div>
+    <div class="error-table-row">
+      <span>/work</span>
+      <span>200</span>
+      <span data-en>Work</span><span data-fr hidden>Travail</span>
+    </div>
+    <div class="error-table-row">
+      <span>/cv</span>
+      <span>200</span>
+      <span>CV</span>
+    </div>
+    <div class="error-table-row missing" id="error-missing-row">
+      <span id="error-missing-path">▸ /…</span>
+      <span>404</span>
+      <span><i><span data-en>not observed</span><span data-fr hidden>non observé</span></i></span>
+    </div>
+
+    <div class="error-table-note">
+      <span data-en>Note. Missingness assumed MAR. Sensitivity analyses available on request.</span>
+      <span data-fr hidden>Note. Données manquantes supposées MAR. Analyses de sensibilité sur demande.</span>
+    </div>
+  </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var path = window.location.pathname;
+    var isFr = path.indexOf('/fr/') === 0 || path === '/fr';
+
+    // Swap visible language spans
+    if (isFr) {
+      document.querySelectorAll('#error-page [data-en]').forEach(function (el) { el.hidden = true; });
+      document.querySelectorAll('#error-page [data-fr]').forEach(function (el) { el.hidden = false; });
+      document.getElementById('error-home-link').href = '/fr/';
+    }
+
+    // Show the actual path in the table
+    var slug = path.replace(/\/$/, '') || '/unknown';
+    document.getElementById('error-missing-path').textContent = '▸ ' + slug;
+
+    // Fix language toggle — swap /fr/ prefix and active highlight
+    var toggle = document.querySelector('.lang-toggle');
+    if (toggle) {
+      if (isFr) {
+        toggle.href = path.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/');
+        var segs = toggle.querySelectorAll('.lang-seg');
+        segs[0].classList.remove('active');
+        segs[1].classList.add('active');
+      } else {
+        toggle.href = '/fr' + path;
+      }
+    }
+  })();
+</script>
