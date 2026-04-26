@@ -13,8 +13,8 @@
 <footer id="contact">
   <span>&copy; {{ 'now' | date: '%Y' }} {{ config.copyright_name }} &middot; {{ config.copyright_location }}</span>
   <span class="links-row">
-    {% if config.nav.work.visible != false %}<a href="{{ work_url }}">{{ config.nav.work[lang] | default: config.nav.work.en }}</a>
-    <span class="sep">&middot;</span>{% endif %}
+    <a href="{{ work_url }}">{{ config.nav.work[lang] | default: config.nav.work.en }}</a>
+    <span class="sep">&middot;</span>
     <a href="{{ cv_url }}" target="_blank" rel="noopener">{{ config.nav.cv[lang] | default: config.nav.cv.en }}</a>
   </span>
 </footer>
