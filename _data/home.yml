@@ -26,3 +26,159 @@ now:
     - en: "Reading Invisible Women by Caroline Criado Perez (again)."
       fr: "Je (re)lis Femmes Invisibles par Caroline Criado Perez."
 
+# ======================================================
+# Timeline
+# ======================================================
+
+timeline_heading:
+  en: "What I've been up to"
+  fr: "Ce que j'ai fait"
+
+timeline_cv_label:
+  en: "Full CV →"
+  fr: "CV complet →"
+
+timeline_filters:
+  - label:
+      en: "All"
+      fr: "Tout"
+    key: "all"
+  - label:
+      en: "Research"
+      fr: "Recherche"
+    key: "research"
+  - label:
+      en: "Work"
+      fr: "Travail"
+    key: "work"
+  - label:
+      en: "Press"
+      fr: "Presse"
+    key: "press"
+  - label:
+      en: "Talks"
+      fr: "Conférences"
+    key: "talk"
+
+timeline:
+  - kind: research
+    year: "2026"
+    title:
+      en: "Disparities in Admissions to Long-term Care Facilities Among Older Adults in Quebec"
+      fr: "Disparités dans les admissions en CHSLD chez les personnes âgées au Québec"
+    venue:
+      en: "In preparation · Int. J. Epidemiology"
+      fr: "En préparation · Int. J. Epidemiology"
+    note:
+      en: "Looking at how social dimensions shape the age at admission to LTC."
+      fr: "Analyse de l'influence des facteurs sociaux sur l'âge d'admission en CHSLD."
+    note_rotation: "-3.2deg"
+
+  - kind: talk
+    year: "2025"
+    title:
+      en: "Teaching data visualization in R at the University of Oxford"
+      fr: "Enseigner la visualisation de données en R à l'Université d'Oxford"
+    venue:
+      en: "Consortium on Analytics for Data-Driven Decision-Making"
+      fr: "Consortium en analytique pour une prise de décision fondée sur des données"
+
+  - kind: press
+    year: "2025"
+    title:
+      en: "Aging-in-place research featured across Canadian media"
+      fr: "Recherche sur le maintien à domicile couverte par les médias canadiens"
+    venue: "The Globe and Mail · La Presse · CTV · Radio-Canada"
+    note:
+      en: "A strange week of hearing my own voice on the radio."
+      fr: "Une semaine étrange à entendre ma propre voix à la radio."
+    note_rotation: "2.4deg"
+
+  - kind: research
+    year: "2024"
+    title:
+      en: "Social Inequity in Ageing in Place Among Older Adults in OECD Countries"
+      fr: "Iniquités sociales dans le maintien à domicile des personnes âgées dans les pays de l'OCDE"
+    url: "https://doi.org/10.1093/ageing/afae166"
+    venue: "Age & Ageing"
+    note:
+      en: "First paper out of my PhD."
+      fr: "Premier article de mon doctorat."
+    note_rotation: "-2.6deg"
+
+  - kind: work
+    year: "2023"
+    title:
+      en: "Invited witness, House of Commons Standing Committee on the Status of Women"
+      fr: "Témoin invitée, Comité permanent de la condition féminine de la Chambre des communes"
+    url: "https://www.ourcommons.ca/documentviewer/en/44-1/FEWO/report-8/page-39"
+    venue:
+      en: "Cited in the Committee's report on menstrual equity"
+      fr: "Citée dans le rapport du Comité sur l'équité menstruelle"
+    note:
+      en: "Testifying on something I work on every day. Surreal and grounding at once."
+      fr: "Témoigner sur quelque chose que je vis au quotidien. Surréel et ancrant à la fois."
+    note_rotation: "-1.8deg"
+
+  - kind: work
+    year: "2023"
+    title:
+      en: "Became Executive Director of Monthly Dignity"
+      fr: "Devenue directrice générale de Dignité mensuelle"
+    venue:
+      en: "Period poverty advocacy across Quebec"
+      fr: "Lutte contre la précarité menstruelle au Québec"
+    note:
+      en: "What started as a way to give back during my PhD became something much bigger."
+      fr: "Ce qui a commencé comme une façon de redonner pendant mon doctorat est devenu bien plus grand."
+    note_rotation: "3.1deg"
+
+  - kind: research
+    year: "2022"
+    title:
+      en: "Started my PhD in Epidemiology, with a FRQS Doctoral Award"
+      fr: "Début de mon doctorat en épidémiologie, avec une bourse doctorale FRQS"
+    venue:
+      en: "McGill · Fonds de recherche du Québec — Santé"
+      fr: "McGill · Fonds de recherche du Québec — Santé"
+
+  - kind: research
+    year: "2021"
+    title:
+      en: "Structural determinants of stigma across health and social conditions: a rapid review and conceptual framework"
+      fr: "Déterminants structurels de la stigmatisation touchant les conditions sanitaires et sociales : revue rapide et cadre conceptuel"
+    url: "https://doi.org/10.24095/hpcdp.41.3.03"
+    venue:
+      en: "Health Promotion and Chronic Disease Prevention in Canada"
+      fr: "Promotion de la santé et prévention des maladies chroniques au Canada"
+
+  - kind: work
+    year: "2020"
+    title:
+      en: "Screening inbound travelers under the Quarantine Act"
+      fr: "Dépistage des voyageurs en vertu de la Loi sur la mise en quarantaine"
+    venue:
+      en: "PHAC · COVID-19 emergency response"
+      fr: "ASPC · réponse d'urgence COVID-19"
+    note:
+      en: "Public health, suddenly very literal."
+      fr: "La santé publique, soudainement très concrète."
+    note_rotation: "1.6deg"
+
+  - kind: work
+    year: "2019"
+    title:
+      en: "Joined the Public Health Agency of Canada"
+      fr: "Entrée à l'Agence de la santé publique du Canada"
+    venue:
+      en: "Policy Analyst · disease surveillance & stigma"
+      fr: "Analyste des politiques · surveillance et stigmatisation"
+
+  - kind: work
+    year: "2018"
+    title:
+      en: "Practicum at the Pan American Health Organization"
+      fr: "Stage à l'Organisation panaméricaine de la santé"
+    venue:
+      en: "Avian influenza surveillance across the Americas"
+      fr: "Surveillance de la grippe aviaire dans les Amériques"
