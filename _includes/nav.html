@@ -15,7 +15,7 @@
 <nav class="nav">
   <a href="{{ home_url }}" class="wordmark">{{ config.wordmark }}</a>
   <div class="links">
-    <a href="{{ work_url }}"{% if page.page_type == "work" %} class="current"{% endif %}>{{ config.nav.work[lang] | default: config.nav.work.en }}</a>
+    {% if config.nav.work.visible != false %}<a href="{{ work_url }}"{% if page.page_type == "work" %} class="current"{% endif %}>{{ config.nav.work[lang] | default: config.nav.work.en }}</a>{% endif %}
     <a href="{{ cv_url }}" target="_blank" rel="noopener">{{ config.nav.cv[lang] | default: config.nav.cv.en }}</a>
     <a href="{{ alt_url }}" class="lang-toggle" aria-label="{{ config.lang_toggle_label[lang] | default: config.lang_toggle_label.en }}">
       <span class="lang-seg{% if lang == 'en' %} active{% endif %}">EN</span>

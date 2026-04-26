@@ -44,6 +44,7 @@ nav:
   work:
     en: "Work"
     fr: "Travail"
+    visible: false
   cv:
     en: "CV"
     fr: "CV"
