@@ -17,7 +17,7 @@
 }
 
 // Dark mode
-body[data-theme="dark"] {
+html[data-theme="dark"] {
   --paper: #0d1424;
   --paper-2: #131c30;
   --ink: #ece9df;

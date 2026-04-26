@@ -1,22 +1,6 @@
-// ============ LANGUAGE REDIRECT ============
+// ============ LANGUAGE TOGGLE ============
 
 (function () {
-  // Only redirect on first visit — if user has toggled lang, respect that
-  var langPref = null;
-  try { langPref = localStorage.getItem("cbf-lang"); } catch (e) {}
-
-  if (!langPref) {
-    // First visit: check browser language
-    var browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
-    var onFrench = location.pathname.indexOf("/fr/") === 0;
-
-    if (browserLang === "fr" && !onFrench) {
-      location.replace("/fr" + location.pathname + location.search + location.hash);
-      return;
-    }
-  }
-
-  // Save preference when user clicks the lang toggle
   var langToggle = document.querySelector(".lang-toggle");
   if (langToggle) {
     langToggle.addEventListener("click", function () {
@@ -55,8 +39,8 @@
   }
 
   function apply() {
-    document.body.dataset.theme = resolved();
-    document.body.dataset.themePref = theme;
+    document.documentElement.dataset.theme = resolved();
+    document.documentElement.dataset.themePref = theme;
 
     var btn = document.getElementById("themeBtn");
     if (btn) {
@@ -80,9 +64,11 @@
       persist();
     });
   }
+})();
 
-  // ============ FILTER LOGIC ============
+// ============ FILTER LOGIC ============
 
+(function () {
   var filterBar = document.getElementById("filters");
   var items = Array.from(document.querySelectorAll(".tl-item"));
 

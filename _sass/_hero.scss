@@ -62,7 +62,7 @@
   @include highlight-em;
 }
 
-body[data-theme="dark"] .hero .bio em {
+html[data-theme="dark"] .hero .bio em {
   @include highlight-em-dark;
 }
 

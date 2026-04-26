@@ -39,7 +39,7 @@
   @include highlight-em;
 }
 
-body[data-theme="dark"] .page-intro em {
+html[data-theme="dark"] .page-intro em {
   @include highlight-em-dark;
 }
 

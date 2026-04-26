@@ -33,6 +33,25 @@
 <link rel="alternate" hreflang="fr" href="{{ config.site_url }}{{ page.url }}" />
 {% endif %}
 
+<!-- Theme + language — must run before first paint -->
+<script>
+(function(){
+  var t='light';
+  try{t=localStorage.getItem('cbf-theme')||'light'}catch(e){}
+  if(t==='auto')t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  if(t!=='light'&&t!=='dark')t='light';
+  document.documentElement.dataset.theme=t;
+
+  var lp;try{lp=localStorage.getItem('cbf-lang')}catch(e){}
+  if(!lp){
+    var bl=(navigator.language||'').slice(0,2).toLowerCase();
+    if(bl==='fr'&&location.pathname.indexOf('/fr/')!==0&&location.pathname!=='/fr'){
+      location.replace('/fr'+location.pathname+location.search+location.hash);
+    }
+  }
+})();
+</script>
+
 <!-- Fonts — preload the two most-used (latin) to avoid FOUT -->
 <link rel="preload" href="/assets/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
