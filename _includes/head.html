@@ -59,13 +59,26 @@
 <!-- Styles -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 
-<!-- Google Analytics -->
+<!-- Google Analytics — deferred until interaction or idle -->
 {% if config.google_analytics_id != "" and config.google_analytics_id %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ config.google_analytics_id }}"></script>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ config.google_analytics_id }}');
+(function(){
+  var id='{{ config.google_analytics_id }}',done=false;
+  function load(){
+    if(done)return;done=true;
+    var s=document.createElement('script');
+    s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+id;
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());gtag('config',id);
+  }
+  ['scroll','click','touchstart','keydown'].forEach(function(e){
+    addEventListener(e,load,{once:true,passive:true});
+  });
+  addEventListener('load',function(){setTimeout(load,100)});
+})();
 </script>
 {% endif %}

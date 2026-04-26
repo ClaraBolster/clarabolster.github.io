@@ -21,7 +21,7 @@ cv:
   # fr: "/assets/cv/cv-fr.pdf"
 
 # Google Analytics — leave blank to disable
-google_analytics_id: ""
+google_analytics_id: "G-4YTVNWME5W"
 
 # Photo
 photo: "/assets/images/clara-headshot.webp"
