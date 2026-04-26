@@ -12,9 +12,9 @@ bio:
   en: >-
     I work at the intersection of <em>quantitative evidence and policy action</em>. My doctoral research examines socioeconomic and gender-based
     inequities in how older adults age in place in Quebec using linked administrative data. Alongside my academic work, I lead a <em>registered charity addressing period poverty</em> across the province.
-    I've testified before the House of Commons, and my research has been featured in <em>The Globe and Mail</em>, <em>La Presse</em>, and <em>Radio-Canada</em>.
+    I've testified before the House of Commons, and my research has been featured in <em>The Globe and Mail</em>, <em>CTV News</em>, and <em>Radio-Canada</em>.
   fr: >-
-    Je travaille à l'intersection de <em>l'analyse quantitative et l'action politique</em>. Mes recherches doctorales portent sur les inégalités socioéconomiques et de genre dans le vieillissement chez soi au Québec, à partir de données administratives jumelées. En parallèle de mon travail universitaire, je dirige un <em>organisme de bienfaisance qui lutte contre la précarité menstruelle</em>, à travers la province. J'ai témoigné devant la Chambre des communes, et mes recherches ont été couverts par <em>La Presse</em>, <em>The Globe and Mail</em>, et <em>Radio-Canada</em>.
+    Je travaille à l'intersection de <em>l'analyse quantitative et l'action politique</em>. Mes recherches doctorales portent sur les inégalités socioéconomiques et de genre dans le vieillissement chez soi au Québec, à partir de données administratives jumelées. En parallèle de mon travail universitaire, je dirige un <em>organisme de bienfaisance qui lutte contre la précarité menstruelle</em>, à travers la province. J'ai témoigné devant la Chambre des communes, et mes recherches ont été couverts par <em>La Presse</em>, <em>Le Devoir</em>, et <em>Radio-Canada</em>.
 
 now:
   label:
@@ -90,20 +90,20 @@ timeline:
       fr: "Recherche sur le maintien à domicile couverte par les médias canadiens"
     venue: "The Globe and Mail · La Presse · CTV · Radio-Canada"
     note:
-      en: "A strange week of hearing my own voice on the radio."
-      fr: "Une semaine étrange à entendre ma propre voix à la radio."
+      en: "A strange but amazing week of hearing my own voice on the news."
+      fr: "Une semaine étrange mais incroyable à entendre ma propre voix dans les nouvelles."
     note_rotation: "2.4deg"
 
   - kind: research
     year: "2024"
     title:
-      en: "Social Inequity in Ageing in Place Among Older Adults in OECD Countries"
-      fr: "Iniquités sociales dans le maintien à domicile des personnes âgées dans les pays de l'OCDE"
+      en: "Social Inequity in Ageing in Place Among Older Adults in OECD Countries: Mixed Studies Systematic Review"
+      fr: "Iniquités sociales dans le vieillissement chez soi ches les personnes âgées dans les pays de l'OCDE: revue systématique d'études mixte"
     url: "https://doi.org/10.1093/ageing/afae166"
     venue: "Age & Ageing"
     note:
-      en: "First paper out of my PhD."
-      fr: "Premier article de mon doctorat."
+      en: "First paper from my PhD!"
+      fr: "Premier article de mon doctorat !"
     note_rotation: "-2.6deg"
 
   - kind: work
