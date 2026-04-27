@@ -126,7 +126,17 @@
     display: none;
   }
 
+  .sphere-prose {
+    grid-column: 1;
+  }
+
   .sidecar {
+    grid-column: 1;
     padding-left: 0;
+    flex-direction: column;
+  }
+
+  .sidecar-block {
+    flex: 1 1 auto;
   }
 }

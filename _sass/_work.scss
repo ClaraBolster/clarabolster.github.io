@@ -158,8 +158,7 @@ html[data-theme="dark"] .page-intro em {
   }
 
   em {
-    font-style: italic;
-    color: var(--accent);
+    @include highlight-em;
   }
 
   strong {
@@ -170,6 +169,10 @@ html[data-theme="dark"] .page-intro em {
   a {
     @include prose-link;
   }
+}
+
+html[data-theme="dark"] .sphere-prose em {
+  @include highlight-em-dark;
 }
 
 // Sidecar — right gutter
