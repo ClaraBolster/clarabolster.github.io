@@ -82,9 +82,9 @@ timeline:
   - kind: press
     year: "2025"
     title:
-      en: "Aging-in-place research featured across Canadian media"
-      fr: "Recherche sur le maintien à domicile couverte par les médias canadiens"
-    venue: "The Globe and Mail · La Presse · CTV · Radio-Canada"
+      en: "Aging in place research featured across Canadian media"
+      fr: "Recherche sur le vieillissement chez soi couverte par les médias canadiens"
+    venue: "The Globe and Mail · Le Devoir · La Presse · CTV · Radio-Canada"
     note:
       en: "A strange but amazing week of hearing my own voice on the news."
       fr: "Une semaine étrange mais incroyable à entendre ma propre voix dans les nouvelles."
@@ -109,18 +109,18 @@ timeline:
       fr: "Témoin invitée, Comité permanent de la condition féminine de la Chambre des communes"
     url: "https://www.ourcommons.ca/documentviewer/en/44-1/FEWO/report-8/page-39"
     venue:
-      en: "Cited in the Committee's report on menstrual equity"
-      fr: "Citée dans le rapport du Comité sur l'équité menstruelle"
+      en: "Cited in the Committee's report on menstrual equity in Canada"
+      fr: "Citée dans le rapport du Comité sur l'équité menstruelle au Canada"
     note:
-      en: "Testifying on something I work on every day. Surreal and grounding at once."
-      fr: "Témoigner sur quelque chose que je vis au quotidien. Surréel et ancrant à la fois."
+      en: "Testifying on something I work on every day. Surreal and grounding."
+      fr: "Témoigner sur quelque chose que je vis au quotidien. Surréel et ancrant."
     note_rotation: "-1.8deg"
 
   - kind: work
-    year: "2023"
+    year: "2022"
     title:
-      en: "Became Executive Director of Monthly Dignity"
-      fr: "Devenue directrice générale de Dignité mensuelle"
+      en: "Became Director of Monthly Dignity"
+      fr: "Devenue directrice de Dignité mensuelle"
     venue:
       en: "Period poverty advocacy across Quebec"
       fr: "Lutte contre la précarité menstruelle au Québec"
@@ -128,15 +128,6 @@ timeline:
       en: "What started as a way to give back during my PhD became something much bigger."
       fr: "Ce qui a commencé comme une façon de redonner pendant mon doctorat est devenu bien plus grand."
     note_rotation: "3.1deg"
-
-  - kind: research
-    year: "2022"
-    title:
-      en: "Started my PhD in Epidemiology, with a FRQS Doctoral Award"
-      fr: "Début de mon doctorat en épidémiologie, avec une bourse doctorale FRQS"
-    venue:
-      en: "McGill · Fonds de recherche du Québec — Santé"
-      fr: "McGill · Fonds de recherche du Québec — Santé"
 
   - kind: research
     year: "2021"
@@ -160,6 +151,15 @@ timeline:
       en: "Public health, suddenly very literal."
       fr: "La santé publique, soudainement très concrète."
     note_rotation: "1.6deg"
+
+  - kind: research
+    year: "2019"
+    title:
+      en: "Started my PhD in Epidemiology, with a FRQS Doctoral Award"
+      fr: "Début de mon doctorat en épidémiologie, avec une bourse doctorale FRQS"
+    venue:
+      en: "McGill · Fonds de recherche du Québec — Santé"
+      fr: "McGill · Fonds de recherche du Québec — Santé"
 
   - kind: work
     year: "2019"
