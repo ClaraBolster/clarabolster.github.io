@@ -16,3 +16,92 @@ page_intro:
   en: "I'm interested in *the people that health systems and social policies* were designed to reach but often miss. My work explores where those gaps are, who falls into them, and what it would take to close them. In practice, I conduct quantitative research that tries to measure disparities in health and access to care, lead community-based programs that try to reach underserved populations, and engage in the slower work of translating both into policy change that can address systemic inequities."
   fr: "Je m'intéresse aux *personnes que les systèmes de santé et les politiques sociales* sont censés rejoindre, mais qu'ils ratent trop souvent. Mon travail cherche à comprendre où se trouvent ces lacunes, qui y tombe, et ce qu'il faudrait pour les combler. Concrètement, je mène des recherches quantitatives visant à mesurer les inégalités en santé et dans l'accès aux soins, je dirige des programmes communautaires qui cherchent à rejoindre les populations mal desservies, et je m'engage dans le travail plus lent de traduire les deux en changements de politique qui peuvent réduire ces iniquités systémiques."
 
+spheres:
+  - id: "health-equity"
+    number: "01"
+    title:
+      en: "Health equity & aging in place."
+      fr: "Équité en santé et vieillissement chez soi."
+    prose:
+      - en: "Aging in place is one of those policy phrases that sounds uncomplicated until you ask *who actually gets to*. Most older adults would rather stay safely in their homes and communities, but the conditions that make that possible (appropriate housing, access to care & support) are unevenly distributed in ways policy mostly overlooks."
+        fr: "Vieillir chez soi, c'est une expression qui paraît simple jusqu'à ce qu'on demande *qui y arrive vraiment*. La plupart des personnes âgées préféreraient rester chez elles en sécurité, mais les conditions qui le permettent (logement adéquat, accès aux soins et au soutien) sont inégalement réparties d'une manière que les politiques publiques peinent à reconnaître."
+      - en: "My doctoral research in epidemiology at McGill with [Amélie Quesnel-Vallée](https://www.ameliequesnelvallee.org) & [Isabelle Vedel](https://www.mcgill.ca/familymed/isabelle-vedel) looks at these gaps in Quebec, asking how social forces shape who can age in place and why a healthcare system that promises universal access leaves those disparities out of view. I work with two decades of linked survey and administrative records for 25,000 older adults, using *survival analyses* and *count regression* methods within a quantitative *intersectional* framework to measure how gender, education, visible minority status, and rurality combine to shape who gets left behind."
+        fr: 
+          "Mes recherches doctorales en épidémiologie à McGill avec [Amélie Quesnel-Vallée](https://www.ameliequesnelvallee.org) et [Isabelle Vedel](https://www.mcgill.ca/familymed/fr/isabelle-vedel) mettent en lumière ces écarts au Québec : comment les dimensions sociales déterminent qui peut vieillir chez soi, et pourquoi un système de santé qui promet l'accès universel laisse ces iniquités dans l'angle mort. Je travaille avec vingt ans de données d'enquête jumelées à des données administratives pour 25 000 personnes âgées, en mobilisant des méthodes d'*analyses de survie* et de *régression de comptage* dans un cadre *intersectionnel* quantitatif, pour mesurer comment le genre, la scolarité, le statut minorité visible, et la ruralité se combinent pour déterminer qui est exclu."
+      - en: "My dissertation was an entry into a wider practice on *equity in healthcare*. I'm a co-investigator on CIHR-funded teams studying equity in dementia care, transitions between care environments, and access to services for linguistic-minority communities. Each of these asks how seemingly equal services produce unequal results and what evidence policymakers need to close those gaps."
+        fr: 
+          "Ma thèse a été une porte d'entrée vers une pratique plus large sur 
+          *l'équité en santé*. Je suis co-chercheuse au sein d'équipes financées par les IRSC qui étudient l'équité dans les soins liés à la démence, les transitions entre milieux de soins, et l'accès aux services pour les communautés de langue minoritaire. Chacune de ces projets cherchent à comprendre comment des services en apparence équivalents produisent des résultats inégaux, et de quelles données probantes les décideurs ont besoin pour combler ces écarts."
+    sidecars:
+      - label:
+          en: "Selected publications"
+          fr: "Publications sélectionnées"
+        items:
+          - title:
+              en: "Disparities in Admissions to Long-term Care Facilities Among Older Adults in Quebec"
+              fr: "Disparités dans les admissions en CHSLD chez les personnes âgées au Québec"
+            meta:
+              en: "In preparation · Int. J. Epidemiology"
+              fr: "En préparation · Int. J. Epidemiology"
+          - title:
+              en: "Social Inequity in Ageing in Place Among Older Adults in OECD Countries"
+              fr: "Iniquités sociales dans le vieillissement chez soi chez les personnes âgées dans les pays de l'OCDE"
+            url: "https://doi.org/10.1093/ageing/afae166"
+            meta:
+              en: "2024 · Age & Ageing · Highlighted in the Editor's View"
+              fr: "2024 · Age & Ageing · Sélectionnée pour l'Editor's View"
+          - title:
+              en: "Structural determinants of stigma across health and social conditions"
+              fr: "Déterminants structurels de la stigmatisation touchant les conditions sanitaires et sociales"
+            url: "https://doi.org/10.1186/s12913-023-10150-1"
+            meta:
+              en: "2021 · Health Promotion and Chronic Disease Prevention"
+              fr: "2021 · Promotion de la santé et prévention des maladies chroniques"
+      - label:
+          en: "Policy contributions"
+          fr: "Contributions aux politiques"
+        items:
+          - title:
+              en: "Aging in place in Quebec (in French)"
+              fr: "Vieillir chez soi au Québec"
+            url: "https://api.vitam.ulaval.ca/storage/Recueil%20IUPLSSS%202025.pdf"
+            meta:
+              en: 2025 · VITAM
+              fr: 2025 · VITAM
+          - title:
+              en: "Health at the heart of Quebec's economic recovery: Home care (in French)"
+              fr: "La santé au cœur de la relance économique du Québec: Les soins à domicile"
+            url: "https://cirano.qc.ca/files/publications/2020PR-01.pdf"
+            meta:
+              en: 2020 · CIRANO
+              fr: 2020 · CIRANO
+      - label:
+          en: "In the press"
+          fr: "Dans la presse"
+        type: "media"
+        items:
+          - title: "Many seniors want to age in place, but few are prepared for the financial and emotional costs"
+            url: "https://www.theglobeandmail.com/investing/personal-finance/retirement/article-many-seniors-want-to-age-in-place-but-few-are-prepared-for-the/"
+            outlet: "The Globe and Mail · 2025"
+            langs: [en]
+          - title: "What’s preventing Canadians from aging in place"
+            url: "https://www.ctvnews.ca/winnipeg/video/2025/05/12/whats-preventing-canadians-from-aging-in-place/"
+            outlet: "CTV News Winnipeg · 2025"
+            langs: [en]
+          - title: "Social factors can impact how people age: McGill study"
+            url: "https://montreal.citynews.ca/2025/05/16/social-factors-can-impact-how-people-age-mcgill-study/"
+            outlet: "CityNews Montreal · 2025"
+            langs: [en]
+          - title: "Qu'est-ce qui permet de vieillir chez soi?"
+            url: "https://www.ledevoir.com/actualites/societe/929496/est-ce-permet-vieillir-soi"
+            outlet: "Le Devoir · 2025"
+            langs: [fr]
+          - title: "Les plus scolarisés ont moins de chances de vieillir à la maison"
+            url: "https://www.lapresse.ca/actualites/sante/2025-05-13/etude-de-l-universite-mcgill/les-plus-scolarises-ont-moins-de-chances-de-vieillir-a-la-maison.php"
+            outlet: "La Presse · 2025"
+            langs: [fr]
+          - title: "Couverture de ma recherche sur le vieillissement chez soi"
+            url: "#"
+            outlet: "Radio Canada Québec, Toronto et Saskatchewan · 2025"
+            langs: [fr]
+
