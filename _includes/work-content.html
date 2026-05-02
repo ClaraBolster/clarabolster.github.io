@@ -34,26 +34,32 @@
     {% if sphere.sidecars %}
     <aside class="sidecar">
       {% for sidecar in sphere.sidecars %}
+      {% if sidecar.langs == nil or sidecar.langs contains lang %}
       <div class="sidecar-block">
         <span class="sidecar-label">{{ sidecar.label[lang] | default: sidecar.label.en | default: sidecar.label }}</span>
         {% if sidecar.type == "media" %}
         <ul class="media-list">
           {% for item in sidecar.items %}
+          {% if item.langs == nil or item.langs contains lang %}
           <li>
             {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}
             <span class="media-outlet">{{ item.outlet[lang] | default: item.outlet.en | default: item.outlet | markdownify | remove: '<p>' | remove: '</p>' }}</span>
           </li>
+          {% endif %}
           {% endfor %}
         </ul>
         {% else %}
         {% for item in sidecar.items %}
+        {% if item.langs == nil or item.langs contains lang %}
         <article class="pub">
           <h3 class="pub-title">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title[lang] | default: item.title.en | default: item.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>{% else %}{{ item.title[lang] | default: item.title.en | default: item.title | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}</h3>
           <div class="pub-meta">{{ item.meta[lang] | default: item.meta.en | default: item.meta | markdownify | remove: '<p>' | remove: '</p>' }}</div>
         </article>
+        {% endif %}
         {% endfor %}
         {% endif %}
       </div>
+      {% endif %}
       {% endfor %}
     </aside>
     {% endif %}
